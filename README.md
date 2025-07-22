@@ -43,12 +43,8 @@ Heart failure is a life-threatening condition that requires timely and accurate 
 
 ### 2. Install Dependencies
 
-Make sure python is installed then run:
 ```bash
-```
-
-if requirments,txt doesn't exist then manually install the dependencies
-```bash
+pip install flask scikit-learn xgboost imbalanced-learn pandas numpy joblib
 ```
 
 ### 3. Start the Web app
@@ -59,6 +55,7 @@ python app.py
 
 ## Sample Output
 
-![Uploading Screenshot 2025-07-22 231001.png…]()
+<img width="1919" height="1079" alt="Screenshot 2025-07-22 231001" src="https://github.com/user-attachments/assets/eed58d8d-f09e-430a-8ac5-9342946c9f35" />
+
 
 
