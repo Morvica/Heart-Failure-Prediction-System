@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Heart Failure Prediction</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #c9d6ff, #e2e2e2);
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+    }
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .full-width {
+      grid-column: span 2;
+    }
+    .btn {
+      background-color: #2ecc71;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .btn:hover {
+      background-color: #27ae60;
+    }
+    .result {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Heart Failure Prediction</h2>
+    <form action="/predict" method="POST">
+      <div>
+        <label for="age">Age (Years)</label>
+        <input type="number" name="age" step="1" required>
+      </div>
+      <div>
+        <label for="anaemia">Anaemia</label>
+        <select name="anaemia" required>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+      </div>
+      <div>
+        <label for="creatinine_phosphokinase">CPK Level (mcg/L)</label>
+        <input type="number" name="creatinine_phosphokinase" step="1" required>
+      </div>
+      <div>
+        <label for="diabetes">Diabetes</label>
+        <select name="diabetes" required>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+      </div>
+      <div>
+        <label for="ejection_fraction">Ejection Fraction (%)</label>
+        <input type="number" name="ejection_fraction" step="1" required>
+      </div>
+      <div>
+        <label for="high_blood_pressure">High Blood Pressure</label>
+        <select name="high_blood_pressure" required>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+      </div>
+      <div>
+        <label for="platelets">Platelets (kiloplatelets/mL)</label>
+        <input type="number" name="platelets" step="1" required>
+      </div>
+      <div>
+        <label for="serum_creatinine">Serum Creatinine (mg/dL)</label>
+        <input type="number" name="serum_creatinine" step="0.01" required>
+      </div>
+      <div>
+        <label for="serum_sodium">Serum Sodium (mEq/L)</label>
+        <input type="number" name="serum_sodium" step="1" required>
+      </div>
+      <div>
+        <label for="sex">Sex</label>
+        <select name="sex" required>
+          <option value="0">Female</option>
+          <option value="1">Male</option>
+        </select>
+      </div>
+      <div>
+        <label for="smoking">Smoking</label>
+        <select name="smoking" required>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+      </div>
+      <div>
+        <label for="time">Follow-up Period (days)</label>
+        <input type="number" name="time" step="1" required>
+      </div>
+      <div class="full-width">
+        <button class="btn" type="submit">Predict</button>
+      </div>
+    </form>
+
+    {% if prediction_text %}
+        <div class="result-box">
+            <h3>{{ prediction_text }}</h3>
+            <p>{{ prob_text }}</p>
+        </div>
+    {% endif %}
+
+
+  </div>
+</body>
+</html>
