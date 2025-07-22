@@ -24,7 +24,7 @@ Heart failure is a life-threatening condition that requires timely and accurate 
 
 - **Model Used**: XGBoostClassifier  
 - **Preprocessing**: StandardScaler for feature scaling  
-- **Techniques**: SMOTE (for class imbalance), Hyperparameter Tuning  
+- **Techniques**: SMOTE (for class imbalance)
 - **Evaluation Metrics**:
   - Accuracy
   - Precision
