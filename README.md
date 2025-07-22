@@ -34,4 +34,31 @@ Heart failure is a life-threatening condition that requires timely and accurate 
 
 ---
 
+## 💻 How to Run This Project
+
+### 1. Clone the Repository
+
+```bash
+```
+
+### 2. Install Dependencies
+
+Make sure python is installed then run:
+```bash
+```
+
+if requirments,txt doesn't exist then manually install the dependencies
+```bash
+```
+
+### 3. Start the Web app
+
+```bash
+python app.py
+```
+
+## Sample Output
+
+![Uploading Screenshot 2025-07-22 231001.png…]()
+
 
