@@ -39,6 +39,7 @@ Heart failure is a life-threatening condition that requires timely and accurate 
 ### 1. Clone the Repository
 
 ```bash
+https://github.com/Morvica/Heart-Failure-Prediction-System
 ```
 
 ### 2. Install Dependencies
